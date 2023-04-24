@@ -1,0 +1,21 @@
+externalAccess:
+  service:
+    type: LoadBalancer
+    ports:
+      external: 9092
+  autoDiscovery:
+    enabled: true
+  enabled: true
+serviceAccount:
+  create: true
+rbac:
+  create: true
+replicaCount: 3
+auth:
+  clientProtocol: sasl
+  sasl:
+    jaas:
+      clientUsers: 
+        - "altair"
+      clientPasswords: 
+        - "muchsecure"
